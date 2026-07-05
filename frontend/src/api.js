@@ -6,7 +6,7 @@ function getToken() {
 
 async function request(path, options = {}) {
   const token = getToken();
-  const res = await fetch(`$https://placementor-ai.onrender.com/${path}`, {
+  const res = await fetch(`https://placementor-ai.onrender.com/${path}`, {
     headers: {
       "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {})
@@ -54,7 +54,7 @@ export const api = {
     formData.append("targetRole", targetRole || "Software Engineer");
     formData.append("userId", "demo-user");
 
-    const res = await fetch(`${BASE_URL}/resumeAnalysis`, {
+    const res = await fetch(`https://placementor-ai.onrender.com/resumeAnalysis`, {
       method: "POST",
       headers: token ? { Authorization: `Bearer ${token}` } : {},
       body: formData
