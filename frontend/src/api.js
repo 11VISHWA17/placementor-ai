@@ -6,7 +6,7 @@ function getToken() {
 
 async function request(path, options = {}) {
   const token = getToken();
-  const res = await fetch(`${BASE_URL}${path}`, {
+  const res = await fetch(`$https://placementor-ai.onrender.com/${path}`, {
     headers: {
       "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {})
