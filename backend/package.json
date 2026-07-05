@@ -1,0 +1,21 @@
+{
+  "name": "placementor-ai-backend",
+  "version": "1.0.0",
+  "description": "PlaceMentor AI backend - free Groq API + file-based storage",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "lowdb": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.7",
+    "pdf-parse": "^1.1.1"
+  }
+}
