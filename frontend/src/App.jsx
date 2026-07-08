@@ -1,4 +1,5 @@
 import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
+import Home from "./pages/Home.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Recommendations from "./pages/Recommendations.jsx";
 import MockInterview from "./pages/MockInterview.jsx";
@@ -63,14 +64,7 @@ export default function App() {
             }
           />
 
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/" element={user ? <ProtectedRoute><Dashboard /></ProtectedRoute> : <Home />} />
           <Route
             path="/recommendations"
             element={

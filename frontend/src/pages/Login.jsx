@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { api } from "../api.js";
 import { useAuth } from "../AuthContext.jsx";
 
 export default function Login() {
-  const [mode, setMode] = useState("login"); // "login" | "register"
+  const [searchParams] = useSearchParams();
+  const initialMode = searchParams.get("mode") === "register" ? "register" : "login";
+  const [mode, setMode] = useState(initialMode); // "login" | "register"
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
