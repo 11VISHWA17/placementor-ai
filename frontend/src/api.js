@@ -54,7 +54,7 @@ export const api = {
     formData.append("targetRole", targetRole || "Software Engineer");
     formData.append("userId", "demo-user");
 
-    const res = await fetch(`https://placementor-ai.onrender.com/resumeAnalysis`, {
+    const res = await fetch(`https://placementor-ai.onrender.com/api/resumeAnalysis`, {
       method: "POST",
       headers: token ? { Authorization: `Bearer ${token}` } : {},
       body: formData
